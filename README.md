@@ -57,26 +57,16 @@ The environment name is phosphorylation-python as defined in the environment.yml
 
 
 ### Run training models
-Users can go to directory "2_model training" and run:
-"python 1_model training.py"
-A result table will generate in the working directory.
-
+Users can go to directory "2_model training" and run: "python 1_model training.py" A table of results will be generated in the working directory.
 
 ### Run pretrained model on your own data
-To test if specific phosphorylation sites can be phosphorylation by certain kinase, users should preprate the data with the same format of 
-"4_phosphorylation prediction/input.csv", namely, the 15-mer sequence, and its protein uniprot ID.
+To test if specific phosphorylation sites can be phosphorylated by a certain kinase, users should prepare the data in the same format as the "4_phosphorylation prediction/input.csv" file, i.e., having the 15-mer sequence and its protein uniprot ID.
 
-To run the test, users also specify the model type (either "SVM" or "DL") and the kinase type (should be one KIN_ACC of the 82 understudied kinases, as
-listed in the Table S1 in the paper). With the model type specified, the program will call the pretrained SVM or FCNN_LSTM models stored in directory
-"3_pretrained models"
+To run the test, users should also specify the model type (either "SVM" or "DL") and the kinase type (it should be one KIN_ACC of the 82 understudied kinases, as listed in the Table S1 in the paper). With the model type specified, the program will call the pretrained either the SVM or the FCNN_LSTM models stored in the directory "3_pretrained models".
 
-For example:
-"python phosphorylation_prediction.py SVM Q9Y243 input.csv"
-or
-""python phosphorylation_prediction.py DL Q9Y243 input.csv""
+For example, run "python phosphorylation_prediction.py SVM Q9Y243 input.csv" or ""python phosphorylation_prediction.py DL Q9Y243 input.csv"".
 
-After running, a result file will generate and be store in working directory (with 1 indicating a predicted phosphorylation sites and 0 suggesting not a
-predicted phosphorylation site).
+After running the command above, a file with the results will be generated and be stored in the working directory (with 1 indicating a predicted phosphorylation site and 0 suggesting the lack of a predicted phosphorylation site).
 
 
 ### Citation request
